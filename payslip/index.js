@@ -17,7 +17,11 @@ require("dotenv").config();
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+const cors = require("cors");
+app.use(cors({
+    origin: "https://financeportal.vercel.app",
+    credentials: true
+}));
 
 // ================================
 // MongoDB connection
